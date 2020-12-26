@@ -14,10 +14,7 @@ def Leftclick(event):
     else:
         labelResult.configure(text="ผอมเกินไป")
     NumberResult.configure(text=float(textboxWeight.get()) / math.pow(float(textboxheight.get())/100, 2))
-def Rightclick(event):
-    print("Right")
-def Doubleclick(event):
-    print("Double")
+
 main = Tk()
 
 labelheight = Label(main, text='Height(เซนติเมตร):')
