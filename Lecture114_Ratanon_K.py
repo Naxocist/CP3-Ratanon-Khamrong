@@ -9,7 +9,8 @@ def convert_currency(event):
     result_label.config(text=c.convert(input_combobox.get(), convert_combobox.get(),
                         float(amount_textbox.get())),
                         font=font)
-    unit_label = Label(main_window, text=d.get_symbol(convert_combobox.get()), fg="dark blue", font=font).grid(row=3, column=3)
+    unit_label = Label(main_window, text=d.get_symbol(convert_combobox.get()), fg="dark blue", font=font).grid(row=3, 
+                                                                                                               column=3)
 
 
 main_window = Tk(className="CurrencyConverter")
