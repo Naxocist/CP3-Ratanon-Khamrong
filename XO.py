@@ -154,7 +154,7 @@ def multiplayer():
 			winner = turn
 			break
 		elif count == 9:
-			winner = draw
+			winner = "draw"
 
 		if turn == p2:
 			turn = p1
