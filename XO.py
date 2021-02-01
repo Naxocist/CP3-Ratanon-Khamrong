@@ -4,7 +4,7 @@ import random
 table = ["-" for i in range(9)]
 can_place = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-def game_table():
+def game_table():  # funciton for display table
 	print("-------------")
 	print("|", table[0], "|", table[1], "|", table[2], "|")
 	print("-------------")
@@ -14,7 +14,7 @@ def game_table():
 	print("-------------")
 
 
-def checkWin():
+def checkWin():  # check if rows, columns or diagnols is the same and not equal to "-"
 	# rows
 	if table[0] == table[1] == table[2] != "-":
 		return True
@@ -38,7 +38,7 @@ def checkWin():
 		return False
 
 
-def singleplayer():
+def singleplayer():  # 1 player
 
 	count = 0
 	choice = ["X", "O"]
@@ -71,7 +71,7 @@ def singleplayer():
 					can_place.pop(can_place.index(move))  # eliminate choice
 					count += 1
 					break
-				except ValueError:
+				except (ValueError, IndexError):
 					print("Number[1-9] please!")
 		else:
 			bot_move = random.choice(can_place)  # bot choose move
@@ -100,7 +100,7 @@ def singleplayer():
 		print("Draw!")
 
 
-def multiplayer():
+def multiplayer():  # 2 players
 	choice = ["X", "O"]
 	count = 0
 	p1 = input("p1: X or O? >> ").capitalize()
@@ -132,8 +132,9 @@ def multiplayer():
 					count += 1
 					break
 
-				except ValueError:
+				except (ValueError, IndexError):
 					print("Number[1-9] please!")
+
 		else:
 			while True:
 				try:
@@ -148,8 +149,9 @@ def multiplayer():
 					count += 1
 					break
 
-				except ValueError:
+				except (ValueError, IndexError):
 					print("Number[1-9] please!")
+				
 		if count >= 5 and checkWin():
 			winner = turn
 			break
@@ -171,14 +173,14 @@ def multiplayer():
 	else:
 		print("Draw!")
 
-def again(p):
+def again(p):  # function check if player(s) want to play again
 	if p == 'y':
 		return True
 	else:
 		return False
 
 
-def game():
+def game():  # main game run
 	global table, can_place
 	user = 'y'
 	while again(user):
