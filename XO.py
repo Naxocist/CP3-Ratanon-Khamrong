@@ -155,6 +155,7 @@ def multiplayer():
 			break
 		elif count == 9:
 			winner = "draw"
+			break
 
 		if turn == p2:
 			turn = p1
@@ -168,7 +169,7 @@ def multiplayer():
 	elif winner == p2:
 		print(f"p2 win![{winner}]")
 	else:
-		print("Draw")
+		print("Draw!")
 
 def again(p):
 	if p == 'y':
